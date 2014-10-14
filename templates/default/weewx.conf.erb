@@ -26,15 +26,15 @@ version = 2.7.0
     # This section is for information about your station
 
     # Description of the station location.
-    location = <%- node['weewx']['station']['location'] %>
+    location = <%= node['weewx']['station']['location'] %>
 
     # Latitude, longitude in decimal degrees
-    latitude = <%- node['weewx']['station']['latitude'] %>
-    longitude = <%- node['weewx']['station']['longitude'] %>
+    latitude = <%= node['weewx']['station']['latitude'] %>
+    longitude = <%= node['weewx']['station']['longitude'] %>
 
     # Altitude of the station, with unit it is in. This is downloaded from
     # from the station if the hardware supports it.
-    altitude = <%- node['weewx']['station']['altitude'] %>
+    altitude = <%= node['weewx']['station']['altitude'] %>
 
     # The start of the rain year (1=January; 10=October, etc.). This is
     # downloaded from the station if the hardware supports it.
@@ -52,7 +52,7 @@ version = 2.7.0
     #  WMR100    WS28xx         WS1
     #  WMR200    WS23xx         CC3000
     #  WMR9x8    TE923          Simulator
-    station_type = <%- node['weewx']['station']['station_type'] %>
+    station_type = <%= node['weewx']['station']['station_type'] %>
 
 ##############################################################################
 
@@ -261,7 +261,7 @@ version = 2.7.0
     # This section is for the ADS WS1 series of weather stations.
 
     # Serial port such as /dev/ttyS0, /dev/ttyUSB0, or /dev/cuaU0
-    port = <%- node['weewx']['WS1']['port'] %>
+    port = <%= node['weewx']['WS1']['port'] %>
 
     # The driver to use:
     driver = weewx.drivers.ws1
@@ -307,15 +307,15 @@ version = 2.7.0
 
     [[StationRegistry]]
         # To register this weather station, set this to True:
-        register_this_station = <%- node['weewx']['StdRESTful']['StationRegistry']['register_this_station'] %>
+        register_this_station = <%= node['weewx']['StdRESTful']['StationRegistry']['register_this_station'] %>
 
     [[Wunderground]]
         # This section is for configuring posts to the Weather Underground
 
         # If you wish to do this, uncomment the following station and password
         # lines and fill them with your station and password:
-        station  = <%- node['weewx']['StdRESTful']['Wunderground']['station'] %>
-        password = <%- node['weewx']['StdRESTful']['Wunderground']['password'] %>
+        station  = <%= node['weewx']['StdRESTful']['Wunderground']['station'] %>
+        password = <%= node['weewx']['StdRESTful']['Wunderground']['password'] %>
 
         # Set the following to True to have weewx use the WU "Rapidfire"
         # protocol
